@@ -105,8 +105,16 @@ int main() {
 			{
 				int found_space = project.find(' ',i+1);
 				string cut = project.substr(i + 1, found_space - i - 1);
-				word.push_back(cut);
-				i = found_space - 1;
+				if (cut == "\t")
+				{
+					i = found_space - 1;
+				}
+				else
+				{
+					word.push_back(cut);
+					i = found_space - 1;
+				}
+				
 
 			}
 		}
